@@ -1,24 +1,18 @@
 package praktikum;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
 import static praktikum.IngredientType.*;
-
 
 @RunWith(Parameterized.class)
 public class IngredientTest {
     @Parameterized.Parameter(0)
     public IngredientType type;
-
     @Parameterized.Parameter(1)
     public String name;
-
     @Parameterized.Parameter(2)
     public float price;
-
     @Parameterized.Parameters(name = "Type: {0}, Name: {1}, Price: {2}")
     public static Object[][] params() {
         return new Object[][]{

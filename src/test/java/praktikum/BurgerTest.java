@@ -1,5 +1,4 @@
 package praktikum;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,7 +8,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-
 public class BurgerTest {
     Burger burger;
     @Mock
