@@ -5,8 +5,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import static praktikum.IngredientType.FILLING;
-import static praktikum.IngredientType.SAUCE;
+import static praktikum.IngredientType.*;
+
+
 @RunWith(Parameterized.class)
 public class IngredientTest {
     @Parameterized.Parameter(0)
@@ -22,31 +23,25 @@ public class IngredientTest {
     public static Object[][] params() {
         return new Object[][]{
                 {SAUCE, "майонезик", 500},
-                {FILLING, "кекчук", 600},
+                {FILLING, "кенгурятина", 600},
         };
     }
     @Test
     public void getPrice() {
-        if (price == 500) {
-            Assert.assertEquals(500, price, 0);
-        } else if (price == 600) {
-            Assert.assertEquals(600, price, 0);
-        }
+        Ingredient ingredient = new Ingredient(type, name, price);
+        float actualPrice = ingredient.getPrice();
+        Assert.assertEquals(price, actualPrice,0);
     }
     @Test
     public void getName() {
-        if (name == "майонезик") {
-            Assert.assertEquals("майонезик", name);
-        } else if (name == "кекчук") {
-            Assert.assertEquals("кекчук", name);
-        }
+        Ingredient ingredient = new Ingredient(type, name, price);
+        String actualName = ingredient.getName();
+        Assert.assertEquals(name, actualName);
     }
     @Test
     public void getType() {
-        if (type == SAUCE) {
-            Assert.assertEquals(SAUCE, type);
-        } else if (type == FILLING) {
-            Assert.assertEquals(FILLING, type);
-        }
+        Ingredient ingredient = new Ingredient(type, name, price);
+        IngredientType actualType = ingredient.getType();
+        Assert.assertEquals(type, actualType);
     }
 }
